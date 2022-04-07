@@ -115,6 +115,7 @@ body {
 
       @include breakpoint($bp) {
         font-size: 1.6rem;
+        letter-spacing: -0.2px;
       }
     }
 
