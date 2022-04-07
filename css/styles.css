@@ -1,7 +1,195 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Karla", sans-serif;
+  background-color: hsl(204deg, 43%, 93%);
+  letter-spacing: -0.2px;
+  display: grid;
+  place-content: center;
+}
+@media only screen and (min-width: 650px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+.grid {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 25px 0px rgba(145, 145, 145, 0.4);
+  width: 31rem;
+  display: grid;
+  grid-template-areas: "community" "subscription" "why";
+}
+@media only screen and (min-width: 650px) {
+  .grid {
+    width: 63.5rem;
+    grid-template-areas: "community community" "subscription why";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.grid__community {
+  grid-area: community;
+  background-color: white;
+  padding: 2.8rem 2.4rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__community {
+    padding: 4.2rem 4rem;
+  }
+}
+.grid__community__title {
+  color: hsl(179deg, 62%, 43%);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__community__title {
+    font-size: 2.4rem;
+  }
+}
+.grid__community__subtitle {
+  color: hsl(71deg, 73%, 54%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  margin-bottom: 1.6rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__community__subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
+.grid__community__desc {
+  color: hsl(218deg, 22%, 67%);
+  line-height: 2.6rem;
+}
+.grid__subscription {
+  grid-area: subscription;
+  background-color: hsl(179deg, 62%, 43%);
+  color: hsl(204deg, 43%, 93%);
+  padding: 2.5rem 2.4rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__subscription {
+    padding: 3.8rem 4rem;
+  }
+}
+.grid__subscription__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.grid__subscription__price {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__subscription__price {
+    margin-bottom: 1rem;
+  }
+}
+.grid__subscription__price span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgba(229, 239, 245, 0.6);
+}
+@media only screen and (min-width: 650px) {
+  .grid__subscription__price span {
+    font-size: 1.6rem;
+    letter-spacing: -0.2px;
+  }
+}
+.grid__subscription__desc {
+  font-size: 1.5rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 2.4rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__subscription__desc {
+    font-size: 1.6rem;
+  }
+}
+.grid__subscription__btn {
+  font-family: "Karla", sans-serif;
+  width: 100%;
+  background-color: hsl(71deg, 73%, 54%);
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 1.6rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0px 0px 15px 0px rgba(160, 160, 160, 0.5);
+  cursor: pointer;
+}
+@media only screen and (min-width: 650px) {
+  .grid__subscription__btn {
+    font-size: 1.6rem;
+    letter-spacing: 0px;
+    padding: 1.2rem;
+  }
+  .grid__subscription__btn:hover {
+    background-color: #a4c21e;
+  }
+  .grid__subscription__btn:active {
+    background-color: #b3d421;
+  }
+}
+.grid__why {
+  grid-area: why;
+  background-color: #4abebd;
+  color: hsl(204deg, 43%, 93%);
+  padding: 2.5rem 2.4rem;
+}
+@media only screen and (min-width: 650px) {
+  .grid__why {
+    padding: 3.8rem 4rem;
+  }
+}
+.grid__why__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.grid__why__desc {
+  line-height: 2rem;
+  list-style-type: none;
+}
+@media only screen and (min-width: 650px) {
+  .grid__why__desc {
+    font-size: 1.4rem;
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
+  width: 100vw;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
 }
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  color: hsl(179deg, 62%, 43%);
 }

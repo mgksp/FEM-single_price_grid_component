@@ -1,7 +1,189 @@
+@use "reset";
+@use "colors" as *;
+@use "breakpoints" as *;
+
+body {
+  font-size: 1.4rem;
+  font-family: "Karla", sans-serif;
+  background-color: $lt-gray;
+  letter-spacing: -0.2px;
+  display: grid;
+  place-content: center;
+
+  @include breakpoint($bp) {
+    font-size: 1.6rem;
+  }
+}
+
+.grid {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 25px 0px rgba(145, 145, 145, 0.4);
+  width: 31rem;
+  display: grid;
+  grid-template-areas: "community" "subscription" "why";
+
+  @include breakpoint($bp) {
+    width: 63.5rem;
+    grid-template-areas:
+      "community community"
+      "subscription why";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__community {
+    grid-area: community;
+    background-color: white;
+    padding: 2.8rem 2.4rem;
+
+    @include breakpoint($bp) {
+      padding: 4.2rem 4rem;
+    }
+
+    &__title {
+      color: $cyan;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.4rem;
+
+      @include breakpoint($bp) {
+        font-size: 2.4rem;
+      }
+    }
+
+    &__subtitle {
+      color: $bright-yellow;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 2rem;
+      margin-bottom: 1.6rem;
+
+      @include breakpoint($bp) {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__desc {
+      color: $grayish-blue;
+      line-height: 2.6rem;
+    }
+  }
+
+  &__subscription {
+    grid-area: subscription;
+    background-color: $cyan;
+    color: $lt-gray;
+    padding: 2.5rem 2.4rem;
+
+    @include breakpoint($bp) {
+      padding: 3.8rem 4rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    &__price {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+
+      @include breakpoint($bp) {
+        margin-bottom: 1rem;
+      }
+
+      span {
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: rgba($color: $lt-gray, $alpha: 0.6);
+
+        @include breakpoint($bp) {
+          font-size: 1.6rem;
+          letter-spacing: -0.2px;
+        }
+      }
+    }
+
+    &__desc {
+      font-size: 1.5rem;
+      letter-spacing: 0.3px;
+      margin-bottom: 2.4rem;
+
+      @include breakpoint($bp) {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__btn {
+      font-family: "Karla", sans-serif;
+      width: 100%;
+      background-color: $bright-yellow;
+      color: white;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      padding: 1.6rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0px 0px 15px 0px rgba($color: #a0a0a0, $alpha: 0.5);
+      cursor: pointer;
+
+      @include breakpoint($bp) {
+        font-size: 1.6rem;
+        letter-spacing: 0px;
+        padding: 1.2rem;
+
+        &:hover {
+          background-color: darken($color: $bright-yellow, $amount: 10%);
+        }
+
+        &:active {
+          background-color: darken($color: $bright-yellow, $amount: 6%);
+        }
+      }
+    }
+  }
+
+  &__why {
+    grid-area: why;
+    background-color: $lt-cyan;
+    color: $lt-gray;
+    padding: 2.5rem 2.4rem;
+
+    @include breakpoint($bp) {
+      padding: 3.8rem 4rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+    }
+
+    &__desc {
+      line-height: 2rem;
+      list-style-type: none;
+
+      @include breakpoint($bp) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
+  width: 100vw;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+
   a {
-    color: hsl(228, 45%, 44%);
+    color: $cyan;
   }
 }

@@ -1,0 +1,7 @@
+$bp: 650px;
+
+@mixin breakpoint($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
